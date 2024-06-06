@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header>
+        <div class="title">
+            <h1>rydde app</h1>
+        </div>
+    </header>
+    <main>
+        <h2>Login Form</h2>
+        <button><a href="/register">register</a></button>
+        <form action="/login" method="post">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </main>
+    <script>
+        console.log(window.location.pathname);
+    </script>
+</body>
+</html>

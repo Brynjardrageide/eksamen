@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrer</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>rydde app</h1>
+        </div>
+    </header>
+    <main>
+        <div class="content-area">
+            <h2>Registration Form</h2>
+            <button><a href="/login">log-in</a></button>
+        </div>
+        <div class="form-area">
+            <form action="/registerer" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="first_name">first Name:</label><br>
+                <input type="text" id="first_name" name="first_name" required><br>
+                <label for="lastname">Last Name:</label><br>
+                <input type="text" id="lastname" name="lastname" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Phone:</label><br>
+                <input type="text" id="phone" name="phone" required><br>
+                <label for="adresse">adresse:</label><br>
+                <input type="text" id="adresse" name="adresse" required><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

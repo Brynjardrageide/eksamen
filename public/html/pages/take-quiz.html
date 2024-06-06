@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz</title>
+</head>
+<body>
+    <h1 id="quiz-title">Quiz Title</h1>
+    <form action="/submit-quiz" method="post" id="quiz-form">
+        <div id="questions">
+            <!-- Questions will be inserted here dynamically -->
+        </div>
+        <button type="submit">Submit Quiz</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizId = window.location.pathname.split('/').pop();
+            fetch(`/api/quiz/${quizId}`)
+                .then(response => response.json())
+                .then(quiz => {
+                    document.getElementById('quiz-title').textContent = quiz.title;
+                    const questionsDiv = document.getElementById('questions');
+                    quiz.questions.forEach(question => {
+                        const questionDiv = document.createElement('div');
+                        questionDiv.innerHTML = `
+                            <label>${question.question_text}</label>
+                            <input type="text" name="responses[${question.question_id}]" required>
+                        `;
+                        questionsDiv.appendChild(questionDiv);
+                    });
+                })
+                .catch(error => console.error('Error fetching quiz:', error));
+        });
+    </script>
+</body>
+</html>
